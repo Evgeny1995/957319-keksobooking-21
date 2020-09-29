@@ -1,7 +1,7 @@
 # Личный проект «Кексобукинг» [![Build status][travis-image]][travis-url]
 
 * Студент: [Женя Леженин](https://up.htmlacademy.ru/javascript/21/user/957319).
-* Наставник: `Неизвестно`.
+* Наставник: `Андрей Устименко`.
 
 ---
 
