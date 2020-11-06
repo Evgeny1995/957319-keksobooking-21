@@ -2,20 +2,16 @@
 // У блока .map убрать класс .map--faded
 let blockMap = document.querySelector(`.map`);
 blockMap.classList.remove(`map--faded`);
-
 const pinTemplate = document.querySelector(`#pin`).content.querySelector(`.map__pin`);
 const mapPins = document.querySelector(`.map__pins`);
-
 const PINS_IN_TOTAL = 8;
 const ARRAY_APARTMENTS_VALUES = [`palace`, `flat`, `house`, `bungalow`];
-
 const OBJ_APARTMENTS_VALUES_RUS = {
   flat: `Квартира`,
   bungalow: `Бунгало`,
   house: `Дом`,
   palce: `Дворец`
 };
-
 const ARRAY_CHECKDATE_VALUES = [`12:00`, `13:00`, `14:00`];
 const ARRAY_COMFORT_VALUES = [`wifi`, `dishwasher`, `parking`, `washer`, `elevator`, `conditioner`];
 const ROOMS_VALUES_MIN = 1;
@@ -44,7 +40,6 @@ const randomArrElement = (arr) => {
 };
 
 // Функция для создания массива из 8 сгенерированных JS объектов.
-
 const getRandArray = () => {
   let array = [];
   for (let i = 0; i < PINS_IN_TOTAL; i++) {
@@ -76,7 +71,6 @@ const getRandArray = () => {
 
 // Функция для рэндэра шаблона
 const renderPin = (item) => {
-
   let pin = pinTemplate.cloneNode(true);
   const img = pin.querySelector(`img`);
 
@@ -100,7 +94,6 @@ const renderPins = (data) => {
 };
 
 // функция для отрисовки photo
-
 const genPhotos = (object, copyTemplate) => {
   const elemPhotos = copyTemplate.querySelector(`.popup__photos`);
   const elemPhoto = elemPhotos.querySelector(`.popup__photo`);
@@ -110,7 +103,6 @@ const genPhotos = (object, copyTemplate) => {
     elemPhotoCopy.src = `${photo}`;
 
     elemPhotos.appendChild(elemPhotoCopy);
-
   });
   elemPhoto.remove();
 };
@@ -129,13 +121,10 @@ const genComfort = (object, copyTemplate) => {
 
 // Отрисовка сгенерированных элементов в MapPins
 const dataPin = getRandArray();
-
 const pins = renderPins(dataPin);
-
 mapPins.append(pins);
 
 // const mapFilters = blockMap.querySelector(`.map__filters-container`);
-
 const createElemCard = (object) => {
   const cardTemplateMap = document.querySelector(`#card`).content.querySelector(`.map__card`);
   const cardElem = cardTemplateMap.cloneNode(true);
@@ -159,5 +148,4 @@ const createElemCard = (object) => {
 };
 
 createElemCard(dataPin[0]);
-
 // console.log();
